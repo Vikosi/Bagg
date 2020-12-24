@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/GetCode"
@@ -13,7 +14,7 @@
         android:layout_width="401dp"
         android:layout_height="71dp"
         android:gravity="center"
-        android:text="Приложение объединяет клиентов и грузоперевозчиков. Пожалуйста, выберете, как Вы хотите зарегистрироваться."
+        android:text="Приложение объединяет клиентов и грузоперевозчиков. Пожалуйста, выберите, как Вы хотите зарегистрироваться."
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,35 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.134" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="195dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="112dp"
-        android:text="Грузоперевозчик"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="0.124"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="135dp"
-        android:layout_height="37dp"
-        android:text="Клиент"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.031" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -66,10 +38,9 @@
         app:layout_constraintGuide_begin="20dp" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView"
         android:layout_width="232dp"
         android:layout_height="233dp"
-        android:onClick="onClickLoader"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.027"
@@ -79,11 +50,10 @@
         app:srcCompat="@drawable/loader" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageView2"
         android:layout_width="155dp"
         android:layout_height="223dp"
         android:layout_marginTop="8dp"
-        android:onClick="onClickClient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
@@ -91,4 +61,31 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.348"
         app:srcCompat="@drawable/client" />
+
+    <Button
+        android:id="@+id/LoaderRegistr"
+        android:layout_width="176dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="72dp"
+        android:background="@color/but"
+        android:text="Грузоперевозчик"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.137" />
+
+    <Button
+        android:id="@+id/ClientRegistr"
+        android:layout_width="154dp"
+        android:layout_height="48dp"
+        android:background="@color/but"
+        android:text="Клиент"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.095" />
 </androidx.constraintlayout.widget.ConstraintLayout>

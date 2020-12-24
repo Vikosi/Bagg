@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "146697020532",
+    "project_id": "bagg-4ae19",
+    "storage_bucket": "bagg-4ae19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146697020532:android:6d0c6b19f0e07013191d21",
+        "android_client_info": {
+          "package_name": "com.vikosi.Bring_bagg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146697020532-qufqte3n2s29k32k2n04l610v81reftd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vikosi.Bring_bagg",
+            "certificate_hash": "eaae38b0cd68b17c928c6b5fb9f98ea02846cc74"
+          }
+        },
+        {
+          "client_id": "146697020532-8tqhh07seraefus8ham0moaoo3b412d6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6PR3m4yTG6tV23P_X3nk3UERgVZRqcM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146697020532-8tqhh07seraefus8ham0moaoo3b412d6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
