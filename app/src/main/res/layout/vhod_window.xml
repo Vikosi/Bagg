@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="@color/ton2"
+    app:cardElevation="10dp"
+    tools:context=".ProfileCreateActivityClient">
+
+    <LinearLayout
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/EmailField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите email"
+            android:inputType="textEmailAddress"
+            android:text=""
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="20sp"
+            app:met_baseColor="#EFF3F2"
+            app:met_primaryColor="#CDDC39"
+            app:met_singleLineEllipsis="true">
+
+        </com.rengwuxian.materialedittext.MaterialEditText>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/PasswordField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите пароль"
+            android:inputType="textPassword"
+            android:text=""
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="20sp"
+            app:met_baseColor="#EFF3F2"
+            app:met_primaryColor="#CDDC39"
+            app:met_singleLineEllipsis="true">
+
+        </com.rengwuxian.materialedittext.MaterialEditText>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

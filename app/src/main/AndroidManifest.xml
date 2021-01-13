@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ProfilActivity"></activity>
         <activity
             android:name=".CreateClientActivity"
             android:label="@string/title_activity_create_client"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ProfileCreateActivityLoader" />
         <activity android:name=".ProfileCreateActivityClient" />
         <activity android:name=".RegistrActivity1" />

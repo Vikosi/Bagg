@@ -49,6 +49,13 @@ public class RegistrActivity1 extends AppCompatActivity {
 
             }
         });
+        LoaderRegistr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLRegisterWindow();
+
+            }
+        });
 
     }
 //Регистрация клиента
@@ -108,7 +115,7 @@ public class RegistrActivity1 extends AppCompatActivity {
                                 user.setPass(pass.getText().toString());
                                 user.setBirth(birth.getText().toString());
 
-                                users.child(user.getEmail())
+                                users.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .setValue(user)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
@@ -122,6 +129,102 @@ public class RegistrActivity1 extends AppCompatActivity {
             }
         });
         dialog1.show();
+    }
+//Регистрация грузчика
+    private void showLRegisterWindow() {
+        AlertDialog.Builder dialog2 = new AlertDialog.Builder(this);
+        dialog2.setTitle("Регистрация грузоперевозчика");
+        dialog2.setMessage("Введите данные для регистрации в приложении");
+
+        LayoutInflater inflater2 = LayoutInflater.from(this);
+        View register_window_loader = inflater2.inflate(R.layout.activity_profile_create_loader, null);
+        dialog2.setView(register_window_loader);
+
+        final MaterialEditText name = register_window_loader.findViewById(R.id.NameField);
+        final MaterialEditText email = register_window_loader.findViewById(R.id.EmailField);
+        final MaterialEditText phone = register_window_loader.findViewById(R.id.PhoneField);
+        final MaterialEditText pass = register_window_loader.findViewById(R.id.PasswordField);
+        final MaterialEditText birth = register_window_loader.findViewById(R.id.BirthdayField);
+        final MaterialEditText date = register_window_loader.findViewById(R.id.PravaDateField);
+        final MaterialEditText serial = register_window_loader.findViewById(R.id.PravaSerialField);
+        final MaterialEditText vin = register_window_loader.findViewById(R.id.VinField);
+        final MaterialEditText passport = register_window_loader.findViewById(R.id.PassportField);
+
+        dialog2.setNegativeButton("Отменить", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                dialogInterface.dismiss();
+            }
+        });
+        dialog2.setPositiveButton("Сохранить", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                if(TextUtils.isEmpty(email.getText().toString())){
+                    Snackbar.make(getcode, "Введите почту", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(name.getText().toString())){
+                    Snackbar.make(getcode, "Введите фамилию и имя", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+                if((pass.getText().toString().length()<6)){
+                    Snackbar.make(getcode, "Введите пароль, в котором более 6 символов", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(phone.getText().toString())){
+                    Snackbar.make(getcode, "Введите номер телефона", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(birth.getText().toString())){
+                    Snackbar.make(getcode, "Введите дату рождения", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(vin.getText().toString())){
+                    Snackbar.make(getcode, "Введите VIN", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(date.getText().toString())){
+                    Snackbar.make(getcode, "Введите дату выдачи и окончания ВУ (напр. 01.01.1901-01.01.1911)", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(serial.getText().toString())){
+                    Snackbar.make(getcode, "Введите серию и номер ВУ без пробелов", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(passport.getText().toString())){
+                    Snackbar.make(getcode, "Введите серию и номер паспорта без пробелов", Snackbar.LENGTH_SHORT).show();
+                    return;
+                }
+                //Успешное добавление
+                auth.createUserWithEmailAndPassword(email.getText().toString(), pass.getText().toString())
+                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+                                User user = new User();
+                                user.setEmail(email.getText().toString());
+                                user.setName(name.getText().toString());
+                                user.setPhone(phone.getText().toString());
+                                user.setPass(pass.getText().toString());
+                                user.setBirth(birth.getText().toString());
+                                user.setBirth(vin.getText().toString());
+                                user.setBirth(serial.getText().toString());
+                                user.setBirth(passport.getText().toString());
+                                user.setBirth(date.getText().toString());
+
+                                users.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(user)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Snackbar.make(getcode, "Пользователь успешно добавлен", Snackbar.LENGTH_SHORT).show();
+                                            }
+                                        });
+
+                            }
+                        });
+            }
+        });
+        dialog2.show();
     }
 
 

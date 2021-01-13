@@ -27,23 +27,39 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/StartButton"
-        android:layout_width="288dp"
-        android:layout_height="82dp"
+        android:id="@+id/RegistrButton"
+        android:layout_width="224dp"
+        android:layout_height="64dp"
         android:background="@color/but"
         android:clickable="true"
-        android:onClick="onClickStart"
-        android:text="Начать"
+        android:onClick="onClickRegistr"
+        android:text="Регистрация"
         android:textColor="@android:color/background_light"
         android:textIsSelectable="true"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VhodButton"
+        app:layout_constraintVertical_bias="0.484" />
+
+    <Button
+        android:id="@+id/VhodButton"
+        android:layout_width="224dp"
+        android:layout_height="64dp"
+        android:background="@color/but"
+        android:clickable="true"
+        android:text="Вход"
+        android:textColor="@android:color/background_light"
+        android:textIsSelectable="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.892" />
+        app:layout_constraintVertical_bias="0.811" />
 
     <ImageView
         android:id="@+id/StartImg"
@@ -65,7 +81,7 @@
         android:text="Bring bagg соединит вас с профессиональными проверенными грузчиками в любое удобное время! "
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/StartButton"
+        app:layout_constraintBottom_toTopOf="@+id/VhodButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="parent"
